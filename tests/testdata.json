@@ -1,0 +1,14 @@
+{
+    "username":"admin@email.com",
+    "password": "admin@123",
+    "name":"Sowmya",
+    "interest":["Cypress","Java","Selenium","Playwright","Python","WDIO","Jenkins"],
+    "gender": ["Male","Female"],
+    "address": {
+                "area":"HSR",
+                "city":"Bangalore",
+                "pincode":571446
+
+                }
+
+}
