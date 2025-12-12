@@ -13,7 +13,7 @@ test("Select values from dropdown", async ({page})=>{
         index
     */
 
-    await page.locator("#state").selectOption({label:"Assam"})
+    await page.locator("#state").selectOption({label:"Assama"})
 
     // await page.waitForTimeout(1000)
 
