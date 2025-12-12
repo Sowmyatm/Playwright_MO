@@ -44,12 +44,29 @@ jobs:
         path: playwright-report/
         retention-days: 30
     
-    - uses: actions/download-artifact@v4
-        with:
-          # Use the name the artifact was given when it was uploaded
-          name: playwright-traces # Replace with the actual artifact name
-          path: ./downloaded-traces 
+    # - uses: actions/download-artifact@v4
+    #     with:
+    #       # Use the name the artifact was given when it was uploaded
+    #       name: playwright-traces # Replace with the actual artifact name
+    #       path: ./downloaded-traces 
           
-      - name: Archive Downloaded Traces (Optional)
-        run: tar -czf traces.tar.gz ./downloaded-traces
-        # Now you can inspect the files on the runner or push them elsewhere
+    #   - name: Archive Downloaded Traces (Optional)
+    #     run: tar -czf traces.tar.gz ./downloaded-traces
+    #     # Now you can inspect the files on the runner or push them elsewhere
+
+    # 1. UPLOAD HTML REPORT (For easy viewing on GitHub Summary)
+    - uses: actions/upload-artifact@v4
+      if: always() # Use 'always()' so the report uploads even if tests fail
+      with:
+        name: playwright-html-report
+        path: playwright-report/
+        retention-days: 30
+        
+    # 2. UPLOAD TRACES (Critical for debugging failure)
+    # Assumes you configured 'trace: on-first-retry' or 'always' in playwright.config.js
+    - uses: actions/upload-artifact@v4
+      if: failure() # Only upload if the job failed to save space
+      with:
+        name: playwright-traces
+        path: test-results/ # This is the default folder for trace files
+        retention-days: 7
