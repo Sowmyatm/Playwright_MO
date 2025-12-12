@@ -43,3 +43,13 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    
+    - uses: actions/download-artifact@v4
+        with:
+          # Use the name the artifact was given when it was uploaded
+          name: playwright-traces # Replace with the actual artifact name
+          path: ./downloaded-traces 
+          
+      - name: Archive Downloaded Traces (Optional)
+        run: tar -czf traces.tar.gz ./downloaded-traces
+        # Now you can inspect the files on the runner or push them elsewhere
