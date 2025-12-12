@@ -46,7 +46,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] ,
         // viewport:{width:1280 , height:720 } // to set screen size for  project level
         screenshot:"only-on-failure", // to get screenshot
-        headless:false,
+        headless:true,
         // video:"on", //to get video
         trace:"on" //to get tracelog
       
