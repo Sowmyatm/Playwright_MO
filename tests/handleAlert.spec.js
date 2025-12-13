@@ -46,7 +46,7 @@ test("Handling Prompt: ", async({page})=>{
         
             expect(dialogWindow.message()).toContain("I am a JS prompt")
         
-             await dialogWindow.accept("Sowmya")
+             await dialogWindow.accept("Sowmy")
         
         })
         
