@@ -42,11 +42,11 @@ test("Handling Prompt: ", async({page})=>{
         
         page.on("dialog", async(dialogWindow)=>{
         
-            expect(dialogWindow.type()).toContain("prompt")
+            expect(dialogWindow.type()).toContain("promp")
         
             expect(dialogWindow.message()).toContain("I am a JS prompt")
         
-             await dialogWindow.accept("Sowmy")
+             await dialogWindow.accept("Sowmya")
         
         })
         
