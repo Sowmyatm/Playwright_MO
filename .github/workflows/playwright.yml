@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# ✅ ADD THIS LINE: Enables the "Run workflow" button in the GitHub UI
+  workflow_dispatch:
+    # No inputs needed for a basic manual run
+
 jobs:
   build:
 
@@ -35,7 +39,8 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright Tests    
-      run: npx playwright test dropdown.spec.js
+      run: npx playwright test dropdown.spec.js;npx playwright test handleAlert.spec.js; npx playwright test google.spec.js
+     
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
