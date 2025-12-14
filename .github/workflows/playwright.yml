@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# ✅ ADD THIS LINE: Enables the "Run workflow" button in the GitHub UI
+  workflow_dispatch:
+    # No inputs needed for a basic manual run
+
 jobs:
   build:
 
