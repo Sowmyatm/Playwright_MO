@@ -35,7 +35,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright Tests    
-      run: npx playwright test dropdown.spec.js;npx playwright test handleAlert.spec.js
+      run: npx playwright test dropdown.spec.js;npx playwright test handleAlert.spec.js; npx playwright test google.spec.js
      
 
     - uses: actions/upload-artifact@v4

@@ -11,7 +11,7 @@ test("launch google", async ({page}) => {
    const title= await page.title
    console.log("Title is " + title);
 
-   await expect(page).toHaveTitle("Google")
+   await expect(page).toHaveTitle("Googl")
    
     
 
