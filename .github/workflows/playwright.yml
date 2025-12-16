@@ -16,6 +16,13 @@ on:
 jobs:
   build:
 
+  # 🎯 ADD THE PERMISSIONS KEY HERE
+    permissions:
+      contents: read       # Allows the job to checkout code (actions/checkout).
+      issues: none         # Prevents the job from interacting with issues.
+      pull-requests: none  # Prevents the job from interacting with PRs.
+      # All other permissions (packages, deployments, etc.) are implicitly 'none'.
+
     runs-on: ubuntu-latest
 
     strategy:
